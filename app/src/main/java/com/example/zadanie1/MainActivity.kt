@@ -3,33 +3,54 @@ package com.example.zadanie1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import kotlin.time.Duration.Companion.days
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var wyjazd=0
-        var powrot=2
-        var oblicz=findViewById<Button>(R.id.obliczanie)
-        var ilosc=findViewById<TextView>(R.id.ilosc)
-        var data_w=findViewById<Button>(R.id.Wyjazd)
-        var data_p=findViewById<Button>(R.id.powrot)
-        var kalendarz=findViewById<CalendarView>(R.id.calendarView)
+        var dayw =0
+        var monthw =0
+        var yearw =0
+
+        var dayp =0
+        var monthp=0
+        var yearp =0
+        var oblicz = findViewById<Button>(R.id.obliczanie)
+        var ilosc = findViewById<TextView>(R.id.ilosc)
+        var data_w = findViewById<Button>(R.id.Wyjazd)
+        var data_p = findViewById<Button>(R.id.powrot)
+        var kalendarz = findViewById<CalendarView>(R.id.calendarView)
+        var dni = findViewById<TextView>(R.id.dni)
+        var miesiace = findViewById<TextView>(R.id.miesiace)
+        var lata = findViewById<TextView>(R.id.lata)
+        val calendarView = findViewById<CalendarView>(R.id.calendarView)
+
+        calendarView.setMinDate(System.currentTimeMillis() - 1000);
 
         data_w.setOnClickListener {
-            wyjazd = kalendarz.date.days.toString().toInt()
+            calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+                monthw = month + 1
+                dayw = (dayOfMonth.toInt())
+                yearw = year
+                dni.text=dayw.toString()
+                miesiace.text=monthw.toString()
+                lata.text=yearw.toString()
+            }
         }
         data_p.setOnClickListener {
-            powrot = kalendarz.date.days.toString().toInt()
-
+            calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+                monthp = month + 1
+                dayp =(dayOfMonth.toInt())
+                yearp = year
+                dni.text=dayp.toString()
+                miesiace.text=monthp.toString()
+                lata.text=yearp.toString()
+            }
         }
-
-        oblicz.setOnClickListener {
-            var suma =powrot-wyjazd
-            ilosc.text = "Ilosc dni: "+ suma.toString()
+        oblicz.setOnClickListener{
+            var sum = dayp.toString().toInt()-dayw.toString().toInt()
+            ilosc.text="Ilosc dni: "+ sum+"//"+dayw+"/"+dayp
         }
-
     }
 }
