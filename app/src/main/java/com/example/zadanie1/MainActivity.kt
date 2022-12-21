@@ -49,8 +49,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
         oblicz.setOnClickListener{
-            var sum = dayp.toString().toInt()-dayw.toString().toInt()
-            ilosc.text="Ilosc dni: "+ sum+"//"+dayw+"/"+dayp
+
+            if (dayw>dayp)
+            {
+            }
+
+
+            var sumw=dayw.toString().toInt()+monthw.toString().toInt()+yearw.toString().toInt()
+            var sump=dayp.toString().toInt()+monthp.toString().toInt()+yearp.toString().toInt()
+            var sum = sump-sumw
+            ilosc.text="Ilosc dni: "+ sum+"//"+sumw+"/"+sump
         }
     }
 }

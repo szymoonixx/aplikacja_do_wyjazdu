@@ -48,7 +48,7 @@
         android:id="@+id/Wyjazd"
         android:layout_width="197dp"
         android:layout_height="70dp"
-        android:text="Button"
+        android:text="Pobierz date z kalendarza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
