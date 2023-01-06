@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 var sump=dayp.toString().toInt()+monthp.toString().toInt()+yearp.toString().toInt()
                 var sum = sump-sumw
                 ilosc.text="Ilosc dni: "+ sum
+
             }
 
         }
