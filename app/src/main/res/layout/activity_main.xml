@@ -48,7 +48,7 @@
         android:id="@+id/Wyjazd"
         android:layout_width="197dp"
         android:layout_height="70dp"
-        android:text="Pobierz date z kalendarza"
+        android:text="Pobierz date wyjazdu z kalendarza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -60,7 +60,7 @@
         android:id="@+id/powrot"
         android:layout_width="181dp"
         android:layout_height="72dp"
-        android:text="Button"
+        android:text="Pobierz date powrotu z kalendarza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
@@ -69,44 +69,16 @@
         app:layout_constraintVertical_bias="0.539" />
 
     <TextView
-        android:id="@+id/dni"
-        android:layout_width="113dp"
-        android:layout_height="103dp"
-        android:text="Dni"
+        android:id="@+id/textView"
+        android:layout_width="290dp"
+        android:layout_height="162dp"
+        android:text="Najpierw kliknij guzi, a potem wybierz date z kalendarza"
         android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
-
-    <TextView
-        android:id="@+id/miesiace"
-        android:layout_width="113dp"
-        android:layout_height="103dp"
-        android:text="Mies"
-        android:textAlignment="center"
-        android:textSize="40sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
-
-    <TextView
-        android:id="@+id/lata"
-        android:layout_width="113dp"
-        android:layout_height="103dp"
-        android:text="Lata"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.749" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

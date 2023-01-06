@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity() {
         var data_w = findViewById<Button>(R.id.Wyjazd)
         var data_p = findViewById<Button>(R.id.powrot)
         var kalendarz = findViewById<CalendarView>(R.id.calendarView)
-        var dni = findViewById<TextView>(R.id.dni)
-        var miesiace = findViewById<TextView>(R.id.miesiace)
-        var lata = findViewById<TextView>(R.id.lata)
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
 
         calendarView.setMinDate(System.currentTimeMillis() - 1000);
@@ -33,9 +30,6 @@ class MainActivity : AppCompatActivity() {
                 monthw = month + 1
                 dayw = (dayOfMonth.toInt())
                 yearw = year
-                dni.text=dayw.toString()
-                miesiace.text=monthw.toString()
-                lata.text=yearw.toString()
             }
         }
         data_p.setOnClickListener {
@@ -43,22 +37,23 @@ class MainActivity : AppCompatActivity() {
                 monthp = month + 1
                 dayp =(dayOfMonth.toInt())
                 yearp = year
-                dni.text=dayp.toString()
-                miesiace.text=monthp.toString()
-                lata.text=yearp.toString()
+
             }
         }
         oblicz.setOnClickListener{
 
-            if (dayw>dayp)
+            if (dayp<dayw)
             {
+                ilosc.text="data powrotu jest mniejsza od daty wujazdu"
+            }
+            else
+            {
+                var sumw=dayw.toString().toInt()+monthw.toString().toInt()+yearw.toString().toInt()
+                var sump=dayp.toString().toInt()+monthp.toString().toInt()+yearp.toString().toInt()
+                var sum = sump-sumw
+                ilosc.text="Ilosc dni: "+ sum
             }
 
-
-            var sumw=dayw.toString().toInt()+monthw.toString().toInt()+yearw.toString().toInt()
-            var sump=dayp.toString().toInt()+monthp.toString().toInt()+yearp.toString().toInt()
-            var sum = sump-sumw
-            ilosc.text="Ilosc dni: "+ sum+"//"+sumw+"/"+sump
         }
     }
 }
